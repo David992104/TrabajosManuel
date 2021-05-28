@@ -15,8 +15,12 @@ public class ConeccionDB {
 	public void conectar() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catdavidosornio", "root","qazplm10");
-			System.out.println("Conexion Mysql");
+			//connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catdavidosornio", "root","qazplm10");
+			connection = (Connection) DriverManager.getConnection("jdbc:mysql://192.168.100.7:3306/catdavidosornio/?user=root", "root", "qazplm10");
+			if (connection.isValid(0))
+				System.out.println("Conexion Mysql");
+			else
+				System.out.println("Conexion fallida");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {

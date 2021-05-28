@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane minHeight="500.0" minWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.com.osda.ahorcado.AhorcadoController">
+   <top>
+      <Label text="Ahorcado" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+   </top>
+   <right>
+      <VBox prefHeight="352.0" prefWidth="120.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnNewGame" mnemonicParsing="false" onAction="#btnNewGameOnAction" text="Nuevo Juego" />
+            <Label fx:id="lblEsperandoJugador" text="Esperando jugador" />
+            <Label fx:id="lblGanador" text="Label" />
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="318.0" fitWidth="254.0" layoutX="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/horca.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCabeza" fitHeight="50.0" fitWidth="56.0" layoutX="219.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/cabeza.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgCuerpo" fitHeight="150.0" fitWidth="200.0" layoutX="241.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/cuerpo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgManoDerecha" fitHeight="92.0" fitWidth="58.0" layoutX="242.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/manoDerecha.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgManoIzq" fitHeight="57.0" fitWidth="55.0" layoutX="190.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/manoIzquierda.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgPieDerecho" fitHeight="78.0" fitWidth="69.0" layoutX="242.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/pieDerecho.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgPieIzq" fitHeight="74.0" fitWidth="81.0" layoutX="187.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/pieIzquierdo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </center>
+   <left>
+      <VBox alignment="CENTER" prefHeight="341.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="361.0" prefWidth="182.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Posicion">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblPosSelect" text="1">
+                                 <font>
+                                    <Font name="System Bold" size="40.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Letra">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblPalSelect" alignment="TOP_CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="50.0" prefHeight="50.0" prefWidth="50.0" text="H" textAlignment="JUSTIFY">
+                                 <font>
+                                    <Font name="System Bold" size="40.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Button fx:id="btnComprobarLetra" mnemonicParsing="false" onAction="#btnComprobarOnAction" text="Comprobar letra">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <ListView fx:id="listaLetras" prefHeight="285.0" prefWidth="182.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </ListView>
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="5.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="490.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="listaPalabras" orientation="HORIZONTAL" prefHeight="100.0" prefWidth="596.0" />
+            <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#btnSalirOnAction" text="Salir">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+</BorderPane>
